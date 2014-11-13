@@ -1,0 +1,21 @@
+{
+  "name": "tmp",
+  "version": "0.0.0",
+  "dependencies": {},
+  "devDependencies": {
+    "connect": "^2.14.4",
+    "connect-livereload": "^0.4.0",
+    "gulp": "^3.6.0",
+    "gulp-clean": "^0.2.4",
+    "gulp-jshint": "^1.5.3",
+    "gulp-livereload": "^1.2.0",
+    "gulp-load-plugins": "^0.5.0",
+    "gulp-rejs": "0.0.0",
+    "gulp-size": "^0.3.0",
+    "gulp-uglify": "^0.2.1",
+    "jshint-stylish": "^0.2.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  }
+}
