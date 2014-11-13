@@ -1,8 +1,4 @@
-goog.provide('Mld.Parser');
-
-goog.require('Typedef');
-
-goog.scope(function() {
+(function() {
 
 /**
  * @param {ByteArray} input
@@ -882,4 +878,4 @@ Mld.Parser.prototype.deltaTimeToByteArray = function(deltaTime) {
   return array;
 };
 
-});
+}());

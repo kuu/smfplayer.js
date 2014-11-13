@@ -1,0 +1,1 @@
+var SMF = {}, Midi = {};

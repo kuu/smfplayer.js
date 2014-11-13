@@ -1,12 +1,5 @@
-goog.provide('SMF.Parser');
-
-goog.require('Typedef');
-goog.require('Riff.Parser');
-goog.require('Midi.Event');
-goog.require('USE_TYPEDARRAY');
-
-
-goog.scope(function() {
+(function() {
+var USE_TYPEDARRAY = true;
 
 /**
  * @param {ByteArray} input input buffer.
@@ -308,7 +301,7 @@ SMF.Parser.prototype.parseTrackChunk = function() {
             }
             break;
           default:
-            goog.global.console.log("unknown message:", status.toString(16));
+            console.log("unknown message:", status.toString(16));
         }
         break;
       // error
@@ -358,4 +351,4 @@ SMF.Parser.prototype.parseTrackChunk = function() {
   }
 };
 
-});
+}());

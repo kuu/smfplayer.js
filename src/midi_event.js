@@ -1,8 +1,9 @@
-goog.provide('Midi.Event');
+(function() {
 
-goog.require('Typedef');
-
-goog.scope(function() {
+function _inherit(Child, Parent) {
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
+}
 
 /**
  * @param {string} subtype event subtype name.
@@ -31,7 +32,7 @@ Midi.Event = function(subtype, deltaTime, time) {
  */
 Midi.ChannelEvent =
 function(subtype, deltaTime, time, channel, opt_parameter1, opt_parameter2) {
-  goog.base(this, subtype, deltaTime, time);
+  Midi.Event.call(this, subtype, deltaTime, time);
 
   /** @type {number} */
   this.channel = channel;
@@ -40,7 +41,7 @@ function(subtype, deltaTime, time, channel, opt_parameter1, opt_parameter2) {
   /** @type {(number|undefined)} */
   this.parameter2 = opt_parameter2;
 };
-goog.inherits(Midi.ChannelEvent, Midi.Event);
+_inherit(Midi.ChannelEvent, Midi.Event);
 
 /**
  * @param {string} subtype
@@ -51,12 +52,12 @@ goog.inherits(Midi.ChannelEvent, Midi.Event);
  * @extends {Midi.Event}
  */
 Midi.SystemExclusiveEvent = function(subtype, deltaTime, time, data) {
-  goog.base(this, subtype, deltaTime, time);
+  Midi.Event.call(this, subtype, deltaTime, time);
 
   /** @type {ByteArray} */
   this.data = data;
 };
-goog.inherits(Midi.SystemExclusiveEvent, Midi.Event);
+_inherit(Midi.SystemExclusiveEvent, Midi.Event);
 
 /**
  * @param {string} subtype
@@ -67,11 +68,11 @@ goog.inherits(Midi.SystemExclusiveEvent, Midi.Event);
  * @extends {Midi.Event}
  */
 Midi.MetaEvent = function(subtype, deltaTime, time, data) {
-  goog.base(this, subtype, deltaTime, time);
+  Midi.Event(this, subtype, deltaTime, time);
 
   /** @type {Array.<*>} */
   this.data = data;
 };
-goog.inherits(Midi.MetaEvent, Midi.Event);
+_inherit(Midi.MetaEvent, Midi.Event);
 
-});
+}());

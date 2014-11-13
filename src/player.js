@@ -1,9 +1,4 @@
-goog.provide('SMF.Player');
-
-goog.require('SMF.Parser');
-goog.require('Mld.Parser');
-
-goog.scope(function() {
+(function() {
 
 /**
  * @constructor
@@ -464,4 +459,4 @@ SMF.Player.prototype.getCopyright = function() {
   return this.copyright;
 };
 
-});
+}());
